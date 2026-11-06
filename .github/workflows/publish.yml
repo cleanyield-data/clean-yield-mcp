@@ -1,0 +1,44 @@
+name: Publish (npm + MCP Registry)
+
+# Manual: Actions > "Publish (npm + MCP Registry)" > Run workflow.
+# Needs the repository secret NPM_TOKEN (npm > Access Tokens > Granular, publish rights).
+# The MCP Registry login uses GitHub OIDC for the io.github.cleanyield-data namespace: no extra secret.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+
+      - name: Check versions match
+        run: |
+          PKG=$(node -p "require('./package.json').version")
+          SRV=$(node -p "require('./server.json').version")
+          PKG_IN_SRV=$(node -p "require('./server.json').packages[0].version")
+          echo "package.json $PKG · server.json $SRV · server.json package $PKG_IN_SRV"
+          test "$PKG" = "$SRV" && test "$PKG" = "$PKG_IN_SRV"
+
+      - name: Publish to npm (skipped if this version is already there)
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -z "$NODE_AUTH_TOKEN" ]; then echo "::error::Add the NPM_TOKEN secret first (Settings > Secrets and variables > Actions)."; exit 1; fi
+          NAME=$(node -p "require('./package.json').name"); VER=$(node -p "require('./package.json').version")
+          if npm view "$NAME@$VER" version >/dev/null 2>&1; then echo "$NAME@$VER already on npm"; else npm publish --provenance --access public; fi
+
+      - name: Publish to the official MCP Registry
+        run: |
+          curl -sL "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_linux_amd64.tar.gz" | tar xz mcp-publisher
+          ./mcp-publisher login github-oidc
+          ./mcp-publisher publish
