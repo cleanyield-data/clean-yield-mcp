@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "clean-yield": {
+      "url": "https://mcp.apify.com/?tools=cleanyield/company-enrichment-from-website,cleanyield/fmcsa-carrier-data,cleanyield/app-store-google-play-reviews,cleanyield/ats-jobs-scraper,cleanyield/latam-public-tenders"
+    },
+    "clean-yield-token": {
+      "url": "https://mcp.apify.com/?tools=cleanyield/company-enrichment-from-website,cleanyield/fmcsa-carrier-data,cleanyield/app-store-google-play-reviews,cleanyield/ats-jobs-scraper,cleanyield/latam-public-tenders",
+      "headers": {
+        "Authorization": "Bearer <APIFY_TOKEN>"
+      }
+    },
+    "clean-yield-local": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@apify/actors-mcp-server@0.20.2",
+        "--tools",
+        "cleanyield/company-enrichment-from-website,cleanyield/fmcsa-carrier-data,cleanyield/app-store-google-play-reviews,cleanyield/ats-jobs-scraper,cleanyield/latam-public-tenders"
+      ],
+      "env": {
+        "APIFY_TOKEN": "<APIFY_TOKEN>"
+      }
+    }
+  }
+}
