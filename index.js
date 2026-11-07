@@ -17,7 +17,7 @@ if (!process.env.APIFY_TOKEN) {
     process.exit(1);
 }
 
-const child = spawn('npx', ['-y', '@apify/actors-mcp-server@0.20.2', '--tools', TOOLS], {
+const child = spawn(process.env.APIFY_MCP_BIN || 'npx', process.env.APIFY_MCP_BIN ? ['--tools', TOOLS] : ['-y', '@apify/actors-mcp-server@0.20.2', '--tools', TOOLS], {
     stdio: 'inherit',
     env: process.env,
     shell: process.platform === 'win32',
