@@ -2,6 +2,8 @@
 
 <!-- mcp-name: io.github.cleanyield-data/clean-yield -->
 
+[![Clean Yield Data Tools MCP server](https://mcprush.com/badge/clean-yield-data-tools-mcp/card.svg)](https://mcprush.com/to/clean-yield-data-tools-mcp?ref=badge)
+
 Give your AI agent five reliable data tools through one MCP server. Every tool returns clean, normalized, schema-validated JSON, and **you only pay for valid results** (pay per result on your own Apify account, no subscription).
 
 | Tool (Apify Actor) | What your agent gets |
