@@ -8,7 +8,7 @@ Give your AI agent five reliable data tools through one MCP server. Every tool r
 
 | Tool (Apify Actor) | What your agent gets |
 |---|---|
-| [`cleanyield/ats-jobs-scraper`](https://apify.com/cleanyield/ats-jobs-scraper) | Every open job of any company on **Greenhouse, Lever, Ashby, Workday, Recruitee, Personio or Teamtailor**, live: structured salary, location, remote/hybrid, dates, full description. |
+| [`cleanyield/ats-jobs-scraper`](https://apify.com/cleanyield/ats-jobs-scraper) | Every open job of any company on **Greenhouse, Lever, Ashby, Workday, Recruitee, Personio or Teamtailor**, live: salary when the posting has one (~6 in 10), location, remote/hybrid, dates, full description. |
 | [`cleanyield/company-enrichment-from-website`](https://apify.com/cleanyield/company-enrichment-from-website) | One row per domain: generic/role emails, E.164 phones, social profiles, tech stack, hiring signals, latest posts. |
 | [`cleanyield/app-store-google-play-reviews`](https://apify.com/cleanyield/app-store-google-play-reviews) | **App Store and Google Play reviews** in one schema: rating, text, date, version, developer reply. |
 | [`cleanyield/fmcsa-carrier-data`](https://apify.com/cleanyield/fmcsa-carrier-data) | **US trucking companies** from official FMCSA open data: USDOT/MC, authority, insurance, fleet, new carriers. |
@@ -58,7 +58,7 @@ Get your token in Apify Console > Settings > API & Integrations. Requires Node.j
 
 ## Pricing
 
-Each tool charges per valid result on your Apify account (see each Actor page for the current price). Failed requests, not-found inputs and incomplete items are never charged, and runs stop at your spending limit.
+Each tool charges per valid result on your Apify account (see each Actor page for the current price: [ATS Jobs](https://apify.com/cleanyield/ats-jobs-scraper), [Company Enrichment](https://apify.com/cleanyield/company-enrichment-from-website), [App Reviews](https://apify.com/cleanyield/app-store-google-play-reviews), [FMCSA Carriers](https://apify.com/cleanyield/fmcsa-carrier-data), [Public Tenders](https://apify.com/cleanyield/latam-public-tenders)). Failed requests, not-found inputs and incomplete items are never charged, and runs stop at your spending limit. Every Actor also has a free Lite version on the Store (same name with `-lite`, up to 25 results per run) to try it before using it from your agent.
 
 ## License
 
