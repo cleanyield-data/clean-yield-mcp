@@ -13,9 +13,7 @@
       "command": "npx",
       "args": [
         "-y",
-        "@apify/actors-mcp-server@0.20.2",
-        "--tools",
-        "cleanyield/company-enrichment-from-website,cleanyield/fmcsa-carrier-data,cleanyield/app-store-google-play-reviews,cleanyield/ats-jobs-scraper,cleanyield/latam-public-tenders"
+        "clean-yield-mcp"
       ],
       "env": {
         "APIFY_TOKEN": "<APIFY_TOKEN>"
