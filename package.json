@@ -1,7 +1,7 @@
 {
   "name": "clean-yield-mcp",
-  "version": "1.0.0",
-  "description": "MCP server with Clean Yield's data tools: company enrichment from a website, FMCSA carrier data, App Store & Google Play reviews, live job listings from Greenhouse, Lever, Ashby, Workday and more, and Latin American public tenders. Runs on Apify's official MCP server.",
+  "version": "1.0.1",
+  "description": "MCP server with Clean Yield's data tools: company enrichment from a website, FMCSA carrier data, App Store & Google Play reviews, live job listings from Greenhouse, Lever, Ashby, Workday and more, and Latin American public tenders. Tools list without a key; runs go through Apify's official MCP server.",
   "mcpName": "io.github.cleanyield-data/clean-yield",
   "type": "module",
   "bin": {
@@ -9,9 +9,14 @@
   },
   "files": [
     "index.js",
+    "tools.json",
     "README.md",
     "LICENSE"
   ],
+  "scripts": {
+    "build:tools": "node scripts/build-tools.mjs",
+    "test": "node test/smoke.mjs"
+  },
   "engines": {
     "node": ">=22.0.0"
   },
