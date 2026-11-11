@@ -8,7 +8,7 @@ Give your AI agent five reliable data tools through one MCP server. Every tool r
 
 | Tool (Apify Actor) | What your agent gets |
 |---|---|
-| [`cleanyield/ats-jobs-scraper`](https://apify.com/cleanyield/ats-jobs-scraper) | Every open job of any company on **Greenhouse, Lever, Ashby, Workday, Recruitee, Personio or Teamtailor**, live: salary when the posting has one (~6 in 10), location, remote/hybrid, dates, full description. |
+| [`cleanyield/ats-jobs-scraper`](https://apify.com/cleanyield/ats-jobs-scraper) | Every open job of any company, live from its ATS board: **Greenhouse, Lever, Ashby, Workday, SAP SuccessFactors, iCIMS, Oracle Recruiting Cloud, Eightfold, Phenom, Recruitee, Personio, Teamtailor, BambooHR** and more. Title, location, remote/hybrid, dates, apply URL, full description; salary when the posting has one. |
 | [`cleanyield/company-enrichment-from-website`](https://apify.com/cleanyield/company-enrichment-from-website) | One row per domain: generic/role emails, E.164 phones, social profiles, tech stack, hiring signals, latest posts. |
 | [`cleanyield/app-store-google-play-reviews`](https://apify.com/cleanyield/app-store-google-play-reviews) | **App Store and Google Play reviews** in one schema: rating, text, date, version, developer reply. |
 | [`cleanyield/fmcsa-carrier-data`](https://apify.com/cleanyield/fmcsa-carrier-data) | **US trucking companies** from official FMCSA open data: USDOT/MC, authority, insurance, fleet, new carriers. |
